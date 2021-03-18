@@ -88,7 +88,11 @@ def delatex(src: str, out: format = format.PLAIN, remove_other: bool = True) -> 
     replace('--', '–').\
     replace(r'\dots', '…').\
     replace('$', '').\
-    replace(r'\ ', ' ')
+    replace(r'\ast', '*').\
+    replace(r'\ ', ' ').\
+    replace(r'\%', '%').\
+    replace(r'\#', '#').\
+    replace(r'\textbackslash', '\\')
 
   if remove_other:
     src = re.sub(r"\\(\d?[\d\w]+)[ \t]*?(\{.*?\}|\[.*?\])*", '', src)
